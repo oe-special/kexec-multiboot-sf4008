@@ -9,29 +9,8 @@ echo
 mount -n -t proc proc /proc
 mount -n -t sysfs sysfs /sys
 
-MODEL=`cat /proc/device-tree/bolt/board | tr "[A-Z]" "[a-z]"`
-
-case $MODEL in
-solo4k|uno4k|ultimo4k)
-    KERNEL=mmcblk0p1
-    ROOTFS=mmcblk0p4
-;;
-uno4kse)
-    KERNEL=mmcblk0p1
-    ROOTFS=mmcblk0p4
-;;
-zero4k)
-    KERNEL=mmcblk0p4
-    ROOTFS=mmcblk0p7
-;;
-duo4k|duo4kse)
-    KERNEL=mmcblk0p6
-    ROOTFS=mmcblk0p9
-;;
-*)
-    echo "$LOGGER: this box isn't supported yet"
-;;
-esac
+KERNEL=mmcblk0p3
+ROOTFS=mmcblk0p4
 
 # read cmdline
 CMDLINE=`cat /proc/cmdline`

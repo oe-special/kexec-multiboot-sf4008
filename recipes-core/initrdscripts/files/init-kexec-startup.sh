@@ -144,7 +144,7 @@ fi
 
 kver=$(uname -r)
 echo "$LOGGER: ##############################################################################" | tee -a $NEWROOT/kexec-multiboot.log
-echo "$LOGGER: Hack to override vuplus static cmdline" | tee -a $NEWROOT/kexec-multiboot.log
+echo "$LOGGER: Hack to override static cmdline" | tee -a $NEWROOT/kexec-multiboot.log
 echo "$LOGGER: ##############################################################################" | tee -a $NEWROOT/kexec-multiboot.log
 mkdir -p $SNEWROOT/var/volatile
 mount -n -t tmpfs tmpfs $SNEWROOT/var/volatile
